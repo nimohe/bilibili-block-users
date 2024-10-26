@@ -1,11 +1,22 @@
 # bilibili-block-users
 
-> 一键批量拉黑B站用户
+> 批量拉黑B站用户
 
 ## 脚本
 
 ### 代码
 ```js
+// 引入jq
+(function() {
+var script = document.createElement('script');
+script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+script.onload = function() {
+console.log("jQuery loaded!");
+};
+document.head.appendChild(script);
+})();
+
+
 var uid = document.cookie.match(/(?<=DedeUserID=).+?(?=;)/)[0]; //自己的uid
 var csrf_token = document.cookie.match(/(?<=bili_jct=).+?(?=;)/)[0];
 
